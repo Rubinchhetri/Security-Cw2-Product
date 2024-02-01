@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Order Complete {% endblock %}
+
+{% block content %}
+
+<div class="container mt-5 pt-5">
+    <div class="row my-5 py-5">
+        {% include 'includes/messages.html' %}
+        
+        <h1 class="d-flex justify-content-center">Your Payment Has Been Done</h1>
+        <a href="{% url 'my-order' request.user.id %}" class="d-flex justify-content-center">View You Order Status</a>
+    </div>
+</div>
+
+{% endblock %}

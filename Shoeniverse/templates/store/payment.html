@@ -1,0 +1,57 @@
+{% load static %}
+{% block content %}
+
+<head>
+    <title>Payment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <style type="text/css">
+        .container {
+            margin-top: 8%;
+            width: 400px;
+            border: ridge 1.5px white;
+            padding: 20px;
+        }
+
+        body {
+            background: #e0eafc;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right,
+                    #cfdef3,
+                    #e0eafc);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right,
+                    #cfdef3,
+                    #e0eafc);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pt-5">
+        <center>This is the fake Payment Page. <br>
+            We do not save the data here</center>
+    </div>
+    <div class="container">
+        <h2>Payment Form</h2>
+        <form action="bootstrapform.php" method="post">
+            <div class="form-group">
+                <label>Card Number</label>
+                <input type="text" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label>Expiry Date</label>
+                <input type="text" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label>CV Code</label>
+                <input type="text" class="form-control"/>
+            </div>
+            <a href="{% url 'completeOrder' %}" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
+        </form>
+    </div>
+</body>
+
+{% endblock content %}
+

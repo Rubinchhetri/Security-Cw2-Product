@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block title %} User Register {% endblock %}
+{% block content %}
+{% load static %}
+<body class="my-login-page mt-5 pt-5">
+	<section class="h-100 mt-5 ">
+		<div class="container h-100">
+			<div class="row justify-content-sm-center h-100">
+				<div class="card-wrapper">
+					<div class="card shadow-lg">
+						<div class="card-body">
+							<center><h4 class="fs-4 card-title fw-bold mb-4">Register Your Account</h4></center>
+							{% include 'includes/messages.html' %}
+							<form action="{% url 'userRegister' %}" method="POST" class="my-login-validation" novalidate="">
+								{% csrf_token %}
+                                <div class="form-group mb-3">
+									<label class="mb-2" for="username">User Name</label>
+									<input id="username" type="text" class="form-control" name="username" required autofocus>
+									<div class="invalid-feedback">
+										What's your user name?
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="mb-2" for="firstname">First Name</label>
+									<input id="name" type="text" class="form-control" name="firstname" required autofocus>
+									<div class="invalid-feedback">
+										What's your first name?
+									</div>
+								</div>
+
+                                <div class="form-group">
+									<label class="mb-2" for="lastname">Last Name</label>
+									<input id="lastname" type="text" class="form-control" name="lastname" required autofocus>
+									<div class="invalid-feedback">
+										What's your last name?
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="mb-2" for="email">E-Mail Address</label>
+									<input id="email" type="email" class="form-control" name="email" required>
+									<div class="invalid-feedback">
+										Your email is invalid
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="mb-2" for="password">Password</label>
+									<input id="password" type="password" class="form-control" name="password" required data-eye>
+									<div class="invalid-feedback">
+										Password is required
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="mb-2" for="cpassword">Confirm Password</label>
+									<input id="cpassword" type="password" class="form-control" name="confirm_password" required data-eye>
+									<div class="invalid-feedback">
+										Confirm Password is required
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="custom-checkbox custom-control">
+										<input type="checkbox" name="agree" id="agree" class="custom-control-input" required="">
+										<label for="agree" class="custom-control-label mb-2">I agree to the <a href="#">Terms and Conditions</a></label>
+										<div class="invalid-feedback mb-2">
+											You must agree with our Terms and Conditions
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group m-0">
+									<button type="submit" class="btn btn-primary btn-block">
+										Register
+									</button>
+								</div>
+								<div class="mt-4 text-center">
+									Already have an account? <a href="{% url 'userLogin' %}">Login</a>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="footer">
+						Copyright &copy; 2017 &mdash; Your Company 
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+{% endblock %} 

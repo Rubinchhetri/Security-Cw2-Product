@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} My Orders {% endblock %}
+{% block content %}
+
+<div class="row mt-5 pt-5">
+    <div class="container-fluid px-0">
+        <!-- <img class="img-fluid" src="#" alt="Customer"> -->
+    </div>
+    <h1 class="py-4" style="background-color: gray; color: #fff; text-align:center;">
+        MY ORDERS
+    </h1>
+
+</div>
+
+
+<table class="table table-hover" id="dev-table">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Image</th>
+            <th>Product Price</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    {% for od in order %}
+    {% if request.user.id == od.user.id %}
+    <tr>
+        <td>{{ od.product.name }}</td>
+        <td> <img src="{{ od.product.product_image.url }}" alt="Profile Pic" height="30px" width="40px" /></td>
+        <td>{{ od.product.price }}</td>
+        <td>{{ od.status }}</td>
+    </tr>
+    {% endif %}
+    {% endfor %} 
+</table>
+<!-- PAGINATION STARTS -->
+<nav aria-label="..." class="container pt-5">
+    {% if order.has_other_pages %}
+    <ul class="pagination">
+        {% if order.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ order.previous_page_number }}"><i
+                    class="fas fa-angle-left"></i></a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link"><i class="fas fa-angle-left"></i></a>
+        </li>
+        {% endif %}
+
+        {% for i in order.paginator.page_range %}
+        {% if order.number == i %}
+        <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+        {% endif %}
+        {% endfor %}
+
+        {% if order.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ order.next_page_number }}"><i
+                    class="fas fa-angle-right"></i></a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link"><i class="fas fa-angle-right"></i></a>
+        </li>
+        {% endif %}
+    </ul>
+    {% endif %}
+</nav>
+<!-- PAGINATION ENDS -->
+
+<a href="{% url 'userDashboard' %}">userDashboard</a>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% load static %}
+
+<head>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 fixed-top">
+        <div class="container">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'img/logo.png' %}" alt="" class="logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span><i id="bar" class="fas fa-bars"></i></span>
+            </button>
+
+            <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <!-- <form class="d-flex">
+                        <input class="form-control" style="width: 250px;" type="search" placeholder="Search"
+                            aria-label="Search">
+                    </form> -->
+                    <li class="nav-item">
+                        <a {% if '/' in request.path %} class="nav-link" {% else %} class="nav-link" {% endif %}
+                            href="{% url 'home' %}">Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a {% if 'store' in request.path %} class="nav-link active" {% else %} class="nav-link"
+                            {% endif %} href="{% url 'store' %}">Store</a>
+                    </li>
+                    <li class="nav-item">
+                        <a {% if 'about' in request.path %} class="nav-link active" {% else %} class="nav-link"
+                            {% endif %} href="{% url 'about' %}">About Us</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="{% url 'adminlogin' %}">Admin</a>
+                    </li> -->
+                    {% if not request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a {% if 'userLogin' in request.path %} class="nav-link active" {% else %} class="nav-link"
+                            {% endif %} href="{% url 'userLogin' %}">Login</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a {% if 'cart' in request.path %} class="nav-link active" {% else %} class="nav-link"
+                            {% endif %} href="{% url 'cart' %}"><i class="fas fa-cart-arrow-down"></i></a>
+                    </li>
+                    <li class="nav-item dropstart">
+                        <a class="nav-link" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a style="cursor: default;" class="dropdown-item disabled" href="#">Welcome,
+                                {{ request.user.username }}</a>
+                            <a class="dropdown-item" href="{% url 'userDashboard' %}">Dash Board</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="javascript:{document.getElementById('logout').submit()}"
+                                style="text-decoration: none;" class="sign-out"><i class="fa fa-sign-out"></i>Logout</a>
+                            <form id="logout" action="{% url 'logout' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden">
+                            </form>
+                        </ul>
+                    </li>
+                    {% endif %}
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</body>

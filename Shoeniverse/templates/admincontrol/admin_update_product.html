@@ -1,0 +1,114 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <style media="screen">
+        a:link {
+            text-decoration: none;
+        }
+
+        .note {
+            text-align: center;
+            height: 80px;
+            background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+            color: #fff;
+            font-weight: bold;
+            line-height: 80px;
+        }
+
+        .form-content {
+            padding: 5%;
+            border: 1px solid #ced4da;
+            margin-bottom: 2%;
+        }
+
+        .form-control {
+            border-radius: 1.5rem;
+        }
+
+        .btnSubmit {
+            border: none;
+            border-radius: 1.5rem;
+            padding: 1%;
+            width: 20%;
+            cursor: pointer;
+            background: #0062cc;
+            color: #fff;
+        }
+
+        .menu {
+            top: 50px;
+        }
+    </style>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<br><br><br><br><br><br>
+
+<form action="{% url 'update-product' products.id %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container register-form">
+        <div class="form">
+            <div class="note">
+                <p>Update Product Details</p>
+            </div>
+            <div class="form-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">Product Name</label>
+                            <input id="name" value="{{ products.name }}" type="text" class="form-control" name="name"
+                                required autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Product Description</label>
+                            <input id="description" value="{{ products.description }}" type="text" class="form-control"
+                                name="description" required autofocus>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="price">Product Price</label>
+                            <input id="price" value="{{ products.price }}" type="number" value="1" min="1"
+                                class="form-control" name="price" required autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_product_image">Product image:</label>
+                            <input type="file" name="product_image" accept="image/*" id="id_product_image">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="category">Product Category</label>
+                            <input id="category" value="{{ products.category }}" type="text" class="form-control"
+                                name="category" required autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label class="required" for="id_available">Available:</label>
+
+                            <select name="available" required id="id_available">
+                                <option value="">---------</option>
+                                <option value="In Stock">In Stock</option>
+                                <option value="Out Of Stock" selected>Out Of Stock</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="checkbox" name="is_featured" id="id_is_featured" checked><label
+                                    class="vCheckboxLabel" for="id_is_featured">Is featured</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btnSubmit">Update</button>
+        </div>
+    </div>
+    </div>
+</form>
+
+
+{% endblock content %}

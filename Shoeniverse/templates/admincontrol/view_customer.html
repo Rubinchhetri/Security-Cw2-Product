@@ -1,0 +1,77 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block title %} Users {% endblock %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="container-fluid px-0">
+            <img class="img-fluid" src="{% static '/img/test1.jpg' %}" alt="Customer">
+           
+        </div>
+        
+        <h1 class="py-4" style="background-color: gray; color: #fff; text-align:center;">CUSTOMERS</h1>
+
+        <table class="table table-hover my-0 py-0">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in users %}
+                <tr>
+                    <td> {{c.username}}</td>
+                    <td> {{c.first_name}}</td>
+                    <td> {{c.last_name}}</td>
+                    <td>{{c.email}}</td>
+                    <td><a class="btn btn-danger btn-xs" href="{% url 'delete-customer' c.id %}" onclick="return confirm('Are you sure you want to delete this user?');">
+                        <span class="glyphicon glyphicon-trash">DELETE</span></a></td>
+
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+    <!-- PAGINATION STARTS -->
+    <nav aria-label="..." class="container pt-5">
+        {% if users.has_other_pages %}
+        <ul class="pagination">
+            {% if users.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ users.previous_page_number }}"><i class="fas fa-angle-left"></i></a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link"><i class="fas fa-angle-left"></i></a>
+            </li>
+            {% endif %}
+
+            {% for i in users.paginator.page_range %}
+            {% if users.number == i %}
+            <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+            {% endif %}
+            {% endfor %}
+
+            {% if users.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ users.next_page_number }}"><i class="fas fa-angle-right"></i></a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link"><i class="fas fa-angle-right"></i></a>
+            </li>
+            {% endif %}
+        </ul>
+        {% endif %}
+    </nav>
+    <!-- PAGINATION ENDS -->
+</div>
+{% endblock content %}

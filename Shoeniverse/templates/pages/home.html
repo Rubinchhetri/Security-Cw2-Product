@@ -1,0 +1,384 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+{% block content %}
+{% load static %}
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Comforter+Brush&family=Lato&family=Roboto:wght@300&family=Work+Sans:wght@100&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        :root {
+            --white-light: rgba(255, 255, 255, 0.5);
+            --alice-blue: #f8f9fa;
+            --carribean-green: #40c9a2;
+            --gray: #ededed;
+        }
+
+        /* Utility stylings */
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 88vw;
+            margin: 0 auto;
+        }
+
+        .lg-title,
+        .md-title,
+        .sm-title {
+            font-family: 'Roboto', sans-serif;
+            padding: 0.6rem 0;
+            text-transform: capitalize;
+        }
+
+        .lg-title {
+            font-size: 2.5rem;
+            font-weight: 500;
+            text-align: center;
+            padding: 1.3rem 0;
+            opacity: 0.9;
+        }
+
+        .md-title {
+            font-size: 2rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .sm-title {
+            font-weight: 300;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .text-light {
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.5;
+            opacity: 0.5;
+            margin: 0.4rem 0;
+        }
+
+        /* product section */
+        .products {
+            background: var(--alice-blue);
+            padding: 3.2rem 0;
+        }
+
+        .products .text-light {
+            text-align: center;
+            width: 70%;
+            margin: 0.9rem auto;
+        }
+
+        .product {
+            margin: 2rem;
+            position: relative;
+        }
+
+        .product-content {
+            background: var(--gray);
+            padding: 3rem 0.5rem 2rem 0.5rem;
+            cursor: pointer;
+        }
+
+        .product-img {
+            background: var(--white-light);
+            box-shadow: 0 0 20px 10px var(--white-light);
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border-radius: 50%;
+            transition: background 0.5s ease;
+        }
+
+        .product-btns {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.4rem;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .btn-cart,
+        .btn-buy {
+            background: transparent;
+            border: 1px solid black;
+            padding: 0.8rem 0;
+            width: 125px;
+            font-family: inherit;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            transition: all 0.6s ease;
+        }
+
+        .btn-cart {
+            background: black;
+            color: white;
+        }
+
+        .btn-cart:hover {
+            background: var(--carribean-green);
+        }
+
+        .btn-buy {
+            background: white;
+        }
+
+        .btn-buy:hover {
+            background: var(--carribean-green);
+            color: #fff;
+        }
+
+        .product-info {
+            background: white;
+            padding: 2rem;
+        }
+
+        .product-info-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .rating span {
+            color: var(--carribean-green);
+        }
+
+        .product-name {
+            color: black;
+            display: block;
+            text-decoration: none;
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .product-price {
+            padding-top: 0.6rem;
+            padding-right: 0.6rem;
+            display: inline-block;
+        }
+
+        .product-img img {
+            transition: transform 0.6s ease;
+        }
+
+        .product:hover .product-img img {
+            transform: scale(1.1);
+        }
+
+        .product:hover .product-img {
+            background: var(--carribean-green);
+        }
+
+        .product:hover .product-btns {
+            opacity: 1;
+        }
+
+        .off-info .sm-title {
+            background: var(--carribean-green);
+            color: white;
+            display: inline-block;
+            padding: 0.5rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            z-index: 1;
+            letter-spacing: 3px;
+            cursor: pointer;
+        }
+
+        /* Media Queries */
+        @media screen and (min-width: 992px) {
+            .product-items {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-col-r-bottom {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .product-items {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .product {
+                margin-right: 1rem;
+                margin-left: 1rem;
+            }
+
+            .products .text-light {
+                width: 50%;
+            }
+        }
+
+        @media screen and (min-width: 1336px) {
+            .product-items {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .flex {
+                height: 60vh;
+            }
+
+            .product-col-left {
+                height: 121.5vh;
+            }
+        }
+    </style>
+</head>
+
+<!-- Home Page Lading Section -->
+<section id="home">
+    <div class="container">
+        <h5>NEW ARRIVALS</h5>
+        <h1><span>Best Price</span> This Year</h1>
+        <p>Hello everyone this is the killer project <br>
+            Welcome to my world</p>
+        <a href="{% url 'store' %}">Shop Now</a>
+    </div>
+</section>
+<!-- Featured Products -->
+<section id="featured">
+    <div class="container-fluid justify-content-center">
+        <h1 class="row col-lg-12 col-md-12 justify-content-center">NEW ARRIVALS</h1>
+        <h3 class="row col-lg-12 col-md-12 justify-content-center">Best Price This Year</h3>
+    </div>
+    <div class="products">
+        <div class="container-fluid">
+            <div class="product-items">
+                <!-- single product -->
+                {% for p in featured_product %}
+                <form action="{% url 'add-to-cart' p.id  %}" method="POST">
+                    {% csrf_token %}
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="{{ p.product_image.url }}" alt="product image">
+                            </div>
+                            {% if p.available == 'In Stock' %}
+                            <div class="product-btns">
+                                <button type="submit" class="btn-cart"> Add to Cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                            {% else %}
+                            <div class="product-btns">
+                                <button disabled type="submit" class="btn-cart"> Add to Cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                            </div>
+                            {% endif %}
+                            <!-- <div class="product-btns">
+                            <button type="button" class="btn-cart"> Add to Cart
+                                <span><i class="fas fa-plus"></i></span>
+                            </button>
+                        </div> -->
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">{{p.category}}</h2>
+                            </div>
+                            <a href="#" class="product-name">{{p.name}}</a>
+                            <p class="product-price">Rs {{p.price}}</p>
+                        </div>
+                        <div class="off-info">
+                            <h2 class="sm-title">{{p.available}}</h2>
+                        </div>
+                    </div>
+                </form>
+                {% endfor %}
+                <!-- end -->
+                <!-- End of First row -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- BANNER -->
+<section id="banner">
+    <div class="container">
+        <h4>MID SEASON'S SALE</h4>
+        <h1>Autumn Collection<br>UP TO 25% OFF</h1>
+        <a href="{% url 'store' %}" class="text-uppercase">Shop Now</a>
+
+    </div>
+</section>
+<!-- Contact Us  -->
+<section id="section-form" class="py-5">
+    <div class="container">
+        <form method="POST" action="{% url 'contact' %}" class="contact-form">
+            {% csrf_token %}
+            <h1 class="d-flex justify-content-center">Contact Us</h1>
+            {% include 'includes/messages.html' %}
+            <div class="row my-3">
+                <div class="col-lg-4 col-md-6 col-4">
+                    <label for="name">Name</label>
+                </div>
+                <div class="col-lg-6 col-md-6 col-8">
+                    <input type="text" name="name" id="name" placeholder="Your Name" required>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-lg-4 col-md-6 col-4">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col-lg-6 col-md-6 col-8">
+                    <input type="email" name="email" id="email" placeholder="Your Email" required>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-lg-4 col-md-6 col-4">
+                    <label for="find-us">How did you find us?</label>
+                </div>  
+                <div class="col-lg-6 col-md-6 col-8">
+                    <select name="find-us" id="find-us">
+                        <option value="Friends" selected>Friends</option>
+                        <option value="Search Engine">Search Engine</option>
+                        <option value="Advertisement">Advertisement</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-lg-4 col-md-6 col-4">
+                    <label>Drop us a line</label>
+                </div>
+                <div class="col-lg-6 col-md-6 col-8">
+                    <textarea name="message" placeholder="Your Message"></textarea>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-lg-4 col-md-6 col-4">
+                    <label>&nbsp;</label>
+                </div>
+                <div class="col-lg-8 col-md-6 col-8">
+                    <button style="background-color: coral; width: 150px;" type="submit" class="text-uppercase">Send It !</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+
+
+
+{% endblock %}

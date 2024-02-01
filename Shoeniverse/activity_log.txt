@@ -1,0 +1,172 @@
+User: Anonymous | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Add to cart
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Delete Cart Item
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access Dashboard
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: User Logged Out
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Registered into the system
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Logged in
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Add to cart
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Order Item
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access Dashboard
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Logged in
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access Dashboard
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Logged in
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: User Logged Out
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Logged in
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: User Logged Out
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin12345>> | Activity: Registered into the system
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Logged in
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access About Page
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access Dashboard
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Add to cart
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access About Page
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Logged in
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access Dashboard
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Add to cart
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Logged in
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access About Page
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access About Page
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access About Page
+User: Anonymous | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access About Page
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access About Page
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access About Page
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access About Page
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access About Page
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access Dashboard
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access Dashboard
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access About Page
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access About Page
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: User Logged Out
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: Access HomePage
+User: Anonymous | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Registered into the system
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Logged in
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Access HomePage
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Add to cart
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: Order Item

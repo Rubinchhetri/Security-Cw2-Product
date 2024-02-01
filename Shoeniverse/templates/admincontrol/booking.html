@@ -1,0 +1,173 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block title %} Bookings {% endblock %}
+{% block content %}
+
+<head>
+    <style>
+        input:focus,
+        button:focus,
+        .form-control:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .form-control:disabled,
+        .form-control[readonly] {
+            background-color: #fff;
+            border-radius: 0px;
+        }
+
+
+        .table tr,
+        .table tr td {
+            vertical-align: middle;
+            font-size: 20px;
+        }
+
+
+        .button-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .button-container .form-control {
+            max-width: 80px;
+            text-align: center;
+            display: inline-block;
+            margin: 0px 5px;
+            border-radius: 0px;
+        }
+
+        #myTable .form-control {
+            width: auto;
+            display: inline-block;
+        }
+
+
+
+        .img-prdct {
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+        }
+
+        .img-prdct img {
+            width: 80%;
+        }
+
+        thead tr {
+            background-color: #88BE4C;
+            color: white;
+        }
+
+        .amount1 {
+            margin-right: 50px;
+        }
+
+        .img-prdct {
+            width: 150px;
+            height: 150px;
+        }
+
+
+        tbody td .fas {
+            cursor: pointer;
+        }
+
+        tbody td .fas:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid px-0">
+        <img class="img-fluid" src="{% static '/img/test2.jpg' %}" alt="Customer">
+    </div>
+    <div class="container-fluid ">
+        <h2 class="text-center my-3">Bookings</h2>
+        {% include 'includes/messages.html' %}
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table id="myTable" class="table">
+                        <thead>
+                            <tr>
+                                <th>Customer Name</th>
+                                <th>Email</th>
+                                <th>Product Name</th>
+                                <th>Image</th>
+                                <th>Price</th>
+                                <th>Availability</th>
+                                <th>Status</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for od in order %}
+                            <tr>
+                                <td>{{ od.user.first_name }} {{ od.user.last_name }}</td>
+                                <td>{{ od.user.email }}</td>
+                                <td>{{ od.product.name }}</td>
+                                <td> <img src="{{ od.product.product_image.url }}" alt="Profile Pic" height="30px"
+                                        width="40px" />
+                                </td>
+                                <td>{{ od.product.price }}</td>
+                                <td>{{ od.product.available }}</td>
+                                <td>{{ od.status }}</td>
+                                <td><a class="btn btn-primary" href="{% url 'update-order' od.id  %}"><span
+                                            class="glyphicon glyphicon-edit">UPDATE</span></a></td>
+                                <td><a class="btn btn-danger btn-xs" href="{% url 'delete-order' od.id %}"
+                                        onclick="return confirm('Are you sure you want to delete this order?');"><span
+                                            class="glyphicon glyphicon-trash">DELETE</span></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGINATION STARTS -->
+    <nav aria-label="..." class="container pt-5">
+        {% if order.has_other_pages %}
+        <ul class="pagination">
+            {% if order.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ order.previous_page_number }}"><i class="fas fa-angle-left"></i></a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link"><i class="fas fa-angle-left"></i></a>
+            </li>
+            {% endif %}
+
+            {% for i in order.paginator.page_range %}
+            {% if order.number == i %}
+            <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+            {% endif %}
+            {% endfor %}
+
+            {% if order.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ order.next_page_number }}"><i class="fas fa-angle-right"></i></a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link"><i class="fas fa-angle-right"></i></a>
+            </li>
+            {% endif %}
+        </ul>
+        {% endif %}
+    </nav>
+    <!-- PAGINATION ENDS -->
+</body>
+
+
+{% endblock content %}
